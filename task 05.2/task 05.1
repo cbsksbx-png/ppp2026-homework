@@ -1,0 +1,3 @@
+dan = int(input("숫자를 입력하시오"))
+for n in range(0 , 10) :
+    print(f"{dan} X {n} = {n * dan}" )3
