@@ -18,13 +18,13 @@ def read_dates(weather_filename):
             dates.append(date)
     return dates
 
-def gdd_season(dates, tavg, abc = float, selected_month = [5,6,7,8,9], value = 2000):
+def gdd_season(dates, tavg, selected_month = [5,6,7,8,9], value = 2000):
     gdd_value = 0
     for i in range(len(dates)):
         date = dates[i]
         t = tavg[i]
         if date[1] in selected_month:
-            gdd_value += abc(t - 5)
+            gdd_value += float(t - 5)
     if gdd_value > value:
         gdd_result = ("넘습니다.")
     else:
@@ -47,7 +47,7 @@ def main():
     dates = read_dates(weather_filename)
     tavg = read_weather_col(weather_filename, 4)
     gdd_value = gdd_season(dates, tavg)
-    print(f"{gdd_value[0]}년 {gdd_value[2]}월 GDD는 {gdd_value[1]}이고.")
+    print(f"{gdd_value[0]}년 {gdd_value[2]}월 GDD는 {gdd_value[1]:.1f}이고.")
     print(f"gdd는 {gdd_value[3]}을 {gdd_value[4]}")
 
 
