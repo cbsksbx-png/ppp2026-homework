@@ -34,6 +34,11 @@ def main():
 
     rainfall_2021 = sumifs(rainfall, years, [2021])
     rainfall_2022 = sumifs(rainfall, years, [2022])
+
+    for y in range(2001, 2023):
+        rainfall_y = sumifs(rainfall, years, [y])
+        print(f"{y}년의 강수량은 {rainfall_y:.1f}입니다.")
+
     print(f"2021년 강수량은 {rainfall_2021:.1f}")
     print(f"2022년 강수량은 {rainfall_2022:.1f}")
 
