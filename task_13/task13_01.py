@@ -21,7 +21,9 @@ def main():
     weather_filename = "weather(146)_2022-2022.csv"
     rainfall = read_weather_col(weather_filename)
     months = read_weather_col(weather_filename, 1, int)
-    sumifs(rainfall, months)
+    summer_rainfall = sumifs(rainfall, months)
+    print(summer_rainfall)
+    print(f"여름철 강수량은 {summer_rainfall:.1f}입니다.")
 
 
 if __name__ == '__main__':
