@@ -19,7 +19,7 @@ def read_rainfall(weather_filename):
 def rainfall_over_5mm(rainfalls):
     rainfall_over = []
     for rainfall in rainfalls:
-        if rainfall > 5 :
+        if rainfall >= 5 :
             rainfall_over.append(rainfall)
     return rainfall_over
 
