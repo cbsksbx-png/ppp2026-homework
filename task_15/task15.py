@@ -13,7 +13,7 @@ def read_weather(weather_filename, col_idx, conv = float):
 def rainfall_over_5mm(rainfalls):
     rainfall_over = []
     for rainfall in rainfalls:
-        if rainfall > 5:
+        if rainfall >= 5:
             rainfall_over.append(rainfall)
     return rainfall_over
 
@@ -37,14 +37,14 @@ def main():
     rainfall_over5 = rainfall_over_5mm(rainfalls)
 
 
-    print(sum(tavg)/len(tavg))
+    print(f"{weather_filename}에서의 연 평균 기온은{sum(tavg)/len(tavg):.1f} 입니다.")
 # "1, 연 평균 기온(일평균 기온의 연평균)"
 
-    print(len(rainfall_over5))
+    print(f"{weather_filename}에서의 5mm 이상 강우일수는 {len(rainfall_over5)}입니다.")
 # "2, 5mm 이상 강우일수"
 
-    print(sum(rainfalls))
-# "3, 이게 총 강우일수"
+    print(f"{weather_filename}에서의 총 강우량 은{sum(rainfalls)}")
+# "3, 이게 총 강우량"
 
 if __name__ == '__main__':
     main()
