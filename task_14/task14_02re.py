@@ -25,13 +25,14 @@ def gdd_season(dates, tavg, selected_month = [5,6,7,8,9], value = 5):
         gdd_found = False
         for i in range(len(dates)):
             d = dates[i]
-            if d[0] == year and (d[1] > selected_month[0] or (d[1] == selected_month[0] and d[2] >= selected_month[1])):
+            # if d[0] == year and d[1] in selected_month:
+            if d[0] == year and (d[1] >= selected_month[0] or (d[1] == selected_month[0] and d[2] >= 1)):
                 t = tavg[i]
                 if t - value >= 0:
                     gdd_value += t - value
                 if t - value < 0:
                     gdd_value += 0
-                if d[1] == 12 and d[2] == 31:
+                if d[1] > selected_month[-1]:
                     print(f"{year}년 적산온도는 {gdd_value}입니다.")
                     gdd_found = True
                     break
