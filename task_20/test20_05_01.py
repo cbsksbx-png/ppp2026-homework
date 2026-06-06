@@ -66,7 +66,7 @@ def main():
 
 
     plt.plot(year, tavg_jj, color="g", label="전주_tavg")
-    # plt.plot(yearly_tavg_sw, color="b", label="수원_tavg")
+    plt.plot(year, tavg_sw, color="b", label="수원_tavg")
     plt.ylabel("온도(℃)")
     plt.legend()
     # plt.show()
